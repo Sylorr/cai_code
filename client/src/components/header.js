@@ -91,13 +91,13 @@ function Header(props) {
     }, [props.customer,props.location,props.vendor]);
 
     return(
-            <Navbar id="nav" >
+            <Navbar id="nav" expand="md" >
                 <OverlayTrigger
                     placement = "right"
                     delay = {{show:250, hide: 300}}
                     overlay = {renderTooltip} >
                     <Button variant="outline-light" size="" onClick={goHomePage}>
-                        <img alt="" src="/coffee-truck.png" width="70" height="50" className="d-inline-block align-top"/>
+                        <img alt="" src="/coffee-truck.png" id="icon" className="d-inline-block align-top"/>
                     </Button>
                 </OverlayTrigger>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

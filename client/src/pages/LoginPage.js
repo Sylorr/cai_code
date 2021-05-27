@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import axios from '../commons/axios.js';
 import { message, Typography ,Layout, Menu, } from 'antd';
 import Header from '../components/header.js';
+import '../pages/main.css';
 
 function App(props) { 
     const [customer, setCustomer] = useState();
@@ -112,22 +113,28 @@ function App(props) {
     return (
       <div>
         <Header customer = {customer}/>
-        <Modal show={show} onHide={handleClose} style={{ marginTop: '2vh' }} >
-        {(modal === "vendor")? vendorModal:vendorModal}
-        </Modal>
-        <Jumbotron style = {{background: "white" , width: '40%', margin :'auto', marginTop: '10%'}}>
-          <h1> 
-          <img alt="" src="/coffee-truck.png" width="70" height="50" className="d-inline-block align-top"/>
-          Welcome to Le Sillage!
-          </h1>
-          <p>
-          Tell me more about the van。
-          </p>
-          <p>
-            <Button variant = "outline-dark" onClick = {onSkip}>Customer</Button>
-            <Button variant = "dark" style = {{marginLeft: "1vw"}} onClick = {handleShow}>Vendor</Button>
-          </p>
-        </Jumbotron>
+        <div id="appMain" >
+          <Modal show={show} onHide={handleClose} style={{ marginTop: '2vh' }} >
+            {(modal === "vendor")? vendorModal:vendorModal}
+          </Modal>
+          <Jumbotron style = {{background: "white" }}>
+            <div class="row"> 
+              <div id="column1">
+                <img alt="" src="https://assets.website-files.com/5e51c674258ffe10d286d30a/5e535d808becbf7162555033_peep-102.svg" 
+                width={'100%'}/>
+              </div>
+              <div id="column2">
+                <h1> Welcome to Le Sillage!</h1>
+                <p> We run a fleet of food trucks that work as popup cafes 
+                offering high-quality coffee and delicious snacks.</p>
+                <br />
+              <Button variant = "outline-dark" style = {{marginLeft: "0", marginRight:"1vw", marginBottom:"1vh"}}onClick = {onSkip}>Customer</Button>
+              <br />
+              <Button variant = "dark" style = {{marginLeft: "0"}} onClick = {handleShow}>Vendor</Button>
+              </div>
+            </div>
+          </Jumbotron>
+        </div>
       </div>
     )
 } 

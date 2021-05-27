@@ -3,7 +3,7 @@ import { Modal, Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import { Badge, Card, notification,Divider,InputNumber,message, Rate, Input } from 'antd';
 import { EyeOutlined, EditOutlined, CheckOutlined, CloseOutlined} from '@ant-design/icons';
 
-import CountUp from '/Users/my_dinuan/Documents/GitHub/cai_code/client/src/components/Countup.js';
+import CountUp from './Countup.js';
 import axios from '../commons/axios';
 // import TextArea from 'antd/lib/input/TextArea';
 
